@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Renov'home | Artisan peintre et revêtement de sol à Nice (06)</title>
+<meta name="description" content="Renov'home, votre artisan peintre à Nice depuis 2014. Peinture intérieure, extérieure, pose de revêtements de sol, ravalement. Devis gratuit."/>
+<meta name="theme-color" content="#05111E"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-error-container": "#93000a",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed": "#001f2a",
+        "on-primary-fixed": "#101c2a",
+        "error": "#ba1a1a",
+        "primary-container": "#1a2634",
+        "surface-bright": "#f8f9fa",
+        "secondary-fixed": "#ffdbca",
+        "secondary": "#9c4400",
+        "on-primary": "#ffffff",
+        "inverse-on-surface": "#f0f1f2",
+        "surface-container-low": "#f3f4f5",
+        "inverse-primary": "#bbc7da",
+        "error-container": "#ffdad6",
+        "on-secondary-fixed-variant": "#773200",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-container": "#5b2500",
+        "surface-dim": "#d9dadb",
+        "secondary-fixed-dim": "#ffb68f",
+        "primary": "#05111e",
+        "on-primary-fixed-variant": "#3c4857",
+        "surface": "#f8f9fa",
+        "surface-variant": "#e1e3e4",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#2e3132",
+        "on-primary-container": "#818d9f",
+        "outline": "#75777c",
+        "on-secondary-fixed": "#331200",
+        "surface-container": "#edeeef",
+        "surface-tint": "#535f6f",
+        "on-surface": "#191c1d",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e1e3e4",
+        "on-background": "#191c1d",
+        "outline-variant": "#c4c6cc",
+        "tertiary-fixed": "#c9e7f7",
+        "on-surface-variant": "#44474c",
+        "surface-container-high": "#e7e8e9",
+        "tertiary-container": "#082935",
+        "secondary-container": "#fd7613",
+        "primary-fixed-dim": "#bbc7da",
+        "on-tertiary-fixed-variant": "#2e4b57",
+        "tertiary-fixed-dim": "#adcbda",
+        "on-tertiary-container": "#74919f",
+        "background": "#f8f9fa",
+        "primary-fixed": "#d7e3f7",
+        "tertiary": "#00131b"
+      },
+      fontFamily: {
+        "headline": ["Manrope"],
+        "body": ["Work Sans"],
+        "label": ["Work Sans"]
+      },
+      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    },
+  },
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Renov'home",
+  "description": "Artisan peintre en bâtiment et poseur de revêtements de sol à Nice",
+  "url": "https://renovhome.fr",
+  "telephone": "+33600000000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "57 Chemin Gino Niccolai",
+    "addressLocality": "Nice",
+    "postalCode": "06000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.7102,
+    "longitude": 7.2620
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Alain Ghedir"
+  },
+  "foundingDate": "2014",
+  "areaServed": ["Nice","Cagnes-sur-Mer","Saint-Laurent-du-Var","Villefranche-sur-Mer","Antibes","Cannes"],
+  "openingHours": ["Mo-Fr 08:00-18:00","Sa by appointment"],
+  "priceRange": "$$"
+}
+</script>
+<style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll indicator */
+@keyframes scrollWheel {
+  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+}
+.scroll-mouse::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 2px;
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+/* Hero noise grain */
+.hero-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.mobile-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Testimonials scroll-snap on mobile */
+@media (max-width: 768px) {
+  .testimonials-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .testimonials-scroll > div {
+    min-width: 85vw;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+
+<!-- NAVBAR -->
+<header>
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm" role="banner">
+  <a href="#" class="text-2xl font-black text-primary tracking-tighter uppercase font-headline" aria-label="Renov'home - Accueil">
+    Renov'home
+  </a>
+  <div class="hidden md:flex space-x-8 items-center" role="navigation" aria-label="Navigation principale">
+    <a class="font-headline tracking-tighter uppercase text-sm font-bold text-primary/70 hover:text-primary transition-colors" href="#services">Services</a>
+    <a class="font-headline tracking-tighter uppercase text-sm font-bold text-primary/70 hover:text-primary transition-colors" href="#projets">Réalisations</a>
+    <a class="font-headline tracking-tighter uppercase text-sm font-bold text-primary/70 hover:text-primary transition-colors" href="#apropos">À propos</a>
+    <a class="font-headline tracking-tighter uppercase text-sm font-bold text-primary/70 hover:text-primary transition-colors" href="#zone">Zone</a>
+    <a class="font-headline tracking-tighter uppercase text-sm font-bold text-primary/70 hover:text-primary transition-colors" href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2 rounded-md font-headline text-sm font-bold tracking-tighter uppercase transition-transform hover:scale-105 active:opacity-80">
+    Demander un devis
+  </a>
+  <button class="md:hidden flex flex-col gap-[5px] z-[60]" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span class="block w-[26px] h-[2px] bg-primary transition-all"></span>
+    <span class="block w-[26px] h-[2px] bg-primary transition-all"></span>
+    <span class="block w-[26px] h-[2px] bg-primary transition-all"></span>
+  </button>
+</nav>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay fixed inset-0 bg-black/40 z-[55]" aria-hidden="true"></div>
+
+<!-- MOBILE MENU -->
+<nav class="mobile-menu fixed top-0 right-0 w-4/5 max-w-[360px] h-screen bg-surface z-[58] pt-24 px-10 shadow-2xl" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+  <a href="#services" class="block py-4 font-headline text-xl font-bold text-primary border-b border-surface-container-high">Services</a>
+  <a href="#projets" class="block py-4 font-headline text-xl font-bold text-primary border-b border-surface-container-high">Réalisations</a>
+  <a href="#apropos" class="block py-4 font-headline text-xl font-bold text-primary border-b border-surface-container-high">À propos</a>
+  <a href="#zone" class="block py-4 font-headline text-xl font-bold text-primary border-b border-surface-container-high">Zone</a>
+  <a href="#contact" class="block py-4 font-headline text-xl font-bold text-primary border-b border-surface-container-high">Contact</a>
+  <a href="#contact" class="block mt-6 text-center bg-primary text-on-primary px-6 py-3 rounded-md font-headline text-sm font-bold tracking-tighter uppercase">Demander un devis</a>
+</nav>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-grain" aria-label="Accueil">
+  <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary via-primary-container to-primary">
+    <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+  </div>
+  <div class="container mx-auto px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-8">
+      <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary mb-6 text-sm">Expert Peintre &amp; Sols — Nice 06</span>
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-primary leading-tight mb-8">
+        Votre intérieur mérite<br/>
+        <span class="text-primary-container">un artisan d'exception.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light mb-10 leading-relaxed">
+        Peinture &amp; revêtements de sol à Nice depuis 2014. Excellence et précision pour transformer vos espaces de vie.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a class="px-8 py-4 bg-primary text-on-primary rounded font-headline font-bold uppercase tracking-tighter transition-all hover:bg-primary-container hover:scale-105" href="#contact">
+          Demander un devis gratuit
+        </a>
+        <a class="px-8 py-4 border-b-2 border-secondary text-primary font-headline font-bold uppercase tracking-tighter transition-all hover:bg-secondary hover:text-white" href="#projets">
+          Voir nos réalisations
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" aria-hidden="true">
+    <div class="scroll-mouse relative w-6 h-[38px] border-2 border-primary/30 rounded-xl"></div>
+    <span class="text-[11px] text-primary/40 uppercase tracking-[0.15em]">Défiler</span>
+  </div>
+</section>
+
+<main>
+
+<!-- PRESENTATION / A PROPOS -->
+<section class="py-24 bg-surface-container-low" id="apropos">
+  <div class="container mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="relative reveal">
+        <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl">
+          <div class="w-full h-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center">
+            <span class="text-on-primary/20 text-sm uppercase tracking-widest">Photo artisan</span>
+          </div>
+        </div>
+        <div class="absolute -bottom-8 -right-8 bg-primary p-8 text-on-primary max-w-xs shadow-xl rounded-lg">
+          <p class="font-headline text-lg font-bold">Alain Ghedir</p>
+          <p class="text-sm opacity-80 font-light italic">Artisan Expert depuis 2014</p>
+        </div>
+      </div>
+      <div class="lg:pl-12 reveal">
+        <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary mb-4 text-sm">À propos</span>
+        <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary mb-8">Un artisan à votre écoute</h2>
+        <p class="text-lg leading-relaxed text-on-surface-variant mb-6">
+          Depuis 2014, Alain Ghedir met son savoir-faire au service des particuliers et professionnels de Nice et de la Côte d'Azur. Passionné par la rénovation, il s'engage sur chaque chantier avec la même exigence : un travail soigné, dans les délais, avec une totale transparence sur les prix.
+        </p>
+        <p class="text-lg leading-relaxed text-on-surface-variant mb-8">
+          De la peinture intérieure à la pose de revêtements de sol, en passant par le ravalement de façade, Renov'home intervient sur Nice, Cagnes-sur-Mer, Saint-Laurent-du-Var, Villefranche-sur-Mer, Antibes et Cannes.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
+            <div>
+              <h4 class="font-bold text-primary mb-1">Devis gratuit sous 48h</h4>
+              <p class="text-sm text-on-surface-variant">Réponse rapide et sans engagement.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">verified</span>
+            <div>
+              <h4 class="font-bold text-primary mb-1">Artisan qualifié</h4>
+              <p class="text-sm text-on-surface-variant">Plus de 10 ans d'expérience terrain.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">shield</span>
+            <div>
+              <h4 class="font-bold text-primary mb-1">Assurance décennale</h4>
+              <p class="text-sm text-on-surface-variant">Vos travaux couverts et protégés.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">cleaning_services</span>
+            <div>
+              <h4 class="font-bold text-primary mb-1">Propreté garantie</h4>
+              <p class="text-sm text-on-surface-variant">Chantier propre, chaque soir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BENTO GRID -->
+<section class="py-24 bg-surface" id="services">
+  <div class="container mx-auto px-8">
+    <div class="mb-16 reveal">
+      <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary text-sm">Expertise</span>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary mt-2">Nos savoir-faire</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Peinture intérieure & extérieure -->
+      <div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-primary text-white h-[400px] reveal">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
+        <div class="absolute bottom-0 p-10 z-10">
+          <h3 class="text-3xl font-headline font-extrabold mb-4">Peinture Intérieure &amp; Extérieure</h3>
+          <p class="max-w-md text-surface/80 mb-6">Murs, plafonds, boiseries, façades, volets, portails. Finitions impeccables et protection durable face au climat méditerranéen.</p>
+          <a class="inline-flex items-center gap-2 font-bold text-secondary" href="#contact">
+            En savoir plus <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Revêtements de sol -->
+      <article class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between reveal">
+        <span class="material-symbols-outlined text-secondary text-5xl mb-6">layers</span>
+        <div>
+          <h3 class="text-2xl font-headline font-extrabold text-primary mb-4">Revêtements de Sol</h3>
+          <p class="text-on-surface-variant mb-6">Parquet, carrelage, vinyle, résine. Pose experte adaptée à chaque pièce et chaque usage.</p>
+        </div>
+      </article>
+      <!-- Ravalement -->
+      <article class="bg-surface-container-high p-10 rounded-xl flex flex-col justify-between reveal">
+        <span class="material-symbols-outlined text-secondary text-5xl mb-6">architecture</span>
+        <div>
+          <h3 class="text-2xl font-headline font-extrabold text-primary mb-4">Ravalement de Façade</h3>
+          <p class="text-on-surface-variant mb-6">Traitement des fissures, imperméabilisation. Protection et esthétique durables pour valoriser votre patrimoine.</p>
+        </div>
+      </article>
+      <!-- Décoration & Finitions -->
+      <div class="md:col-span-2 bg-primary-container text-white p-10 rounded-xl flex flex-col md:flex-row gap-10 items-center reveal">
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-headline font-extrabold mb-4">Finitions &amp; Décoration</h3>
+          <p class="text-surface/70">Enduits décoratifs, papier peint, effets matière. Conseils personnalisés en colorimétrie. La touche finale qui fait la différence.</p>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-white/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary">brush</span>
+          </div>
+          <div class="aspect-square bg-white/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary">format_paint</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section class="py-24 bg-surface-container-lowest" id="projets">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+      <div>
+        <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary text-sm">Portfolio</span>
+        <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary mt-2">Nos réalisations</h2>
+      </div>
+      <div class="flex gap-4">
+        <button class="px-6 py-2 bg-primary text-on-primary rounded-full text-sm font-bold uppercase tracking-tighter">Tout</button>
+        <button class="px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all">Peinture</button>
+        <button class="px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all">Sols</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-primary to-[#2a6b8a] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Rénovation appartement Nice Centre"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Appartement Nice Centre</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Rénovation Complète Parquet &amp; Murs</h3>
+        <p class="text-sm text-on-surface-variant">Finition Satinée — 120m²</p>
+      </div>
+      <!-- Project 2 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-[#9c4400] to-[#e0a98a] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Villa Villefranche"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Villa Villefranche</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Peinture Décorative</h3>
+        <p class="text-sm text-on-surface-variant">Effet minéral &amp; Chaux</p>
+      </div>
+      <!-- Project 3 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-[#44474c] to-[#818d9f] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Ravalement Cagnes-sur-Mer"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Cagnes-sur-Mer</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Ravalement de Façade</h3>
+        <p class="text-sm text-on-surface-variant">Protection anti-humidité</p>
+      </div>
+      <!-- Project 4 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-primary-container to-[#3c4857] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Enduit décoratif"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Nice Ouest</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Enduit Décoratif Salon</h3>
+        <p class="text-sm text-on-surface-variant">Effet béton ciré</p>
+      </div>
+      <!-- Project 5 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-[#082935] to-[#1B4965] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Pose parquet Antibes"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Antibes</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Pose Parquet Massif</h3>
+        <p class="text-sm text-on-surface-variant">Chêne huilé — 85m²</p>
+      </div>
+      <!-- Project 6 -->
+      <div class="group cursor-pointer reveal">
+        <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
+          <div class="w-full h-full bg-gradient-to-br from-[#a08060] to-[#E8DED1] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Sol vinyle Saint-Laurent-du-Var"></div>
+          <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Saint-Laurent-du-Var</div>
+        </div>
+        <h3 class="font-headline font-bold text-xl text-primary">Sol Vinyle Design</h3>
+        <p class="text-sm text-on-surface-variant">Imitation bois naturel</p>
+      </div>
+    </div>
+    <p class="text-center mt-12 text-lg text-on-surface-variant font-light reveal">Chaque projet est unique. Contactez-nous pour discuter du vôtre.</p>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="py-24 bg-primary text-on-primary">
+  <div class="container mx-auto px-8">
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+      <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary text-sm">Avis Clients</span>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tighter mt-4">Ils nous font confiance</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 testimonials-scroll">
+      <div class="border-l border-white/10 pl-8 reveal">
+        <div class="flex text-secondary mb-6">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-lg mb-8 italic">"Travail impeccable pour la peinture de notre appartement. Alain est ponctuel, soigné et de très bon conseil. Je recommande les yeux fermés."</p>
+        <p class="font-headline font-bold">Sophie M.</p>
+        <p class="text-xs opacity-50">Nice</p>
+      </div>
+      <div class="border-l border-white/10 pl-8 reveal">
+        <div class="flex text-secondary mb-6">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-lg mb-8 italic">"Ravalement de façade réalisé dans les temps et dans le budget. Le résultat est superbe, notre maison a retrouvé une seconde jeunesse."</p>
+        <p class="font-headline font-bold">Marc D.</p>
+        <p class="text-xs opacity-50">Cagnes-sur-Mer</p>
+      </div>
+      <div class="border-l border-white/10 pl-8 reveal">
+        <div class="flex text-secondary mb-6">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-lg mb-8 italic">"Pose de parquet parfaite dans tout l'appartement. Très professionnel, chantier laissé propre chaque soir. Un vrai artisan comme on n'en fait plus."</p>
+        <p class="font-headline font-bold">Jean-Philippe B.</p>
+        <p class="text-xs opacity-50">Antibes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE D'INTERVENTION -->
+<section class="py-24 bg-surface-container-low" id="zone">
+  <div class="container mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary text-sm">Localisation</span>
+        <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary mt-2 mb-8">Nous intervenons en Côte d'Azur</h2>
+        <p class="text-lg text-on-surface-variant mb-10">Votre artisan peintre se déplace gratuitement pour vos devis sur l'ensemble du littoral et de l'arrière-pays niçois.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Nice (06000, 06100...)</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Cagnes-sur-Mer</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Saint-Laurent-du-Var</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Villefranche-sur-Mer</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Antibes &amp; Juan-les-Pins</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded shadow-sm">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <span class="font-bold">Cannes</span>
+          </div>
+        </div>
+      </div>
+      <div class="h-[400px] rounded-xl overflow-hidden shadow-2xl grayscale reveal">
+        <div class="w-full h-full bg-gradient-to-br from-primary/20 to-surface-container flex items-center justify-center">
+          <span class="text-on-surface-variant/40 text-sm uppercase tracking-widest">Carte — Côte d'Azur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="py-24 bg-surface" id="contact">
+  <div class="container mx-auto px-8">
+    <div class="max-w-6xl mx-auto bg-surface-container-lowest shadow-2xl rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-5">
+      <div class="lg:col-span-2 bg-primary p-12 text-on-primary reveal">
+        <h2 class="font-headline text-3xl font-extrabold mb-8">Parlons de votre projet</h2>
+        <p class="opacity-70 mb-12">Remplissez le formulaire et Alain Ghedir vous rappellera sous 24h pour discuter de vos besoins et organiser une visite technique.</p>
+        <div class="space-y-8">
+          <a class="flex items-center gap-4 hover:text-secondary transition-colors" href="tel:+33600000000">
+            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div>
+              <p class="text-xs opacity-50 uppercase font-bold tracking-widest">Téléphone</p>
+              <p class="font-bold">06 00 00 00 00</p>
+            </div>
+          </a>
+          <a class="flex items-center gap-4 hover:text-secondary transition-colors" href="mailto:contact@renovhome.fr">
+            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <div>
+              <p class="text-xs opacity-50 uppercase font-bold tracking-widest">Email</p>
+              <p class="font-bold">contact@renovhome.fr</p>
+            </div>
+          </a>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined">pin_drop</span>
+            </div>
+            <div>
+              <p class="text-xs opacity-50 uppercase font-bold tracking-widest">Adresse</p>
+              <p class="font-bold leading-tight">57 Chemin Gino Niccolai<br/>06000 Nice</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined">schedule</span>
+            </div>
+            <div>
+              <p class="text-xs opacity-50 uppercase font-bold tracking-widest">Horaires</p>
+              <p class="font-bold leading-tight">Lun – Ven : 8h – 18h<br/>Sam : sur rendez-vous</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-3 p-12 reveal">
+        <form action="#" class="space-y-6" aria-label="Formulaire de contact">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="name">Nom complet</label>
+              <input class="w-full bg-surface-container-high border-none rounded-md p-4 focus:ring-2 focus:ring-secondary/40" id="name" name="name" placeholder="Ex: Jean Dupont" type="text" required/>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="email">Email</label>
+              <input class="w-full bg-surface-container-high border-none rounded-md p-4 focus:ring-2 focus:ring-secondary/40" id="email" name="email" placeholder="votre@email.com" type="email" required/>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="phone">Téléphone</label>
+            <input class="w-full bg-surface-container-high border-none rounded-md p-4 focus:ring-2 focus:ring-secondary/40" id="phone" name="phone" placeholder="06 .. .. .. .." type="tel"/>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="project-type">Type de projet</label>
+            <select class="w-full bg-surface-container-high border-none rounded-md p-4 focus:ring-2 focus:ring-secondary/40" id="project-type" name="project-type" required>
+              <option value="" disabled selected>Sélectionnez un type de projet</option>
+              <option value="peinture-interieure">Peinture intérieure</option>
+              <option value="peinture-exterieure">Peinture extérieure</option>
+              <option value="revetement-sol">Revêtement de sol</option>
+              <option value="ravalement">Ravalement</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="message">Votre projet</label>
+            <textarea class="w-full bg-surface-container-high border-none rounded-md p-4 focus:ring-2 focus:ring-secondary/40" id="message" name="message" placeholder="Décrivez brièvement vos travaux..." rows="4"></textarea>
+          </div>
+          <button class="w-full py-4 bg-secondary text-on-secondary rounded font-headline font-bold uppercase tracking-widest transition-transform active:scale-95 shadow-lg" type="submit">
+            Envoyer ma demande de devis
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-on-primary py-16 px-8 border-t border-white/5">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-sm leading-relaxed">
+    <div>
+      <div class="text-xl font-bold text-surface mb-6 uppercase tracking-tighter font-headline">Renov'home</div>
+      <p class="text-surface/60 mb-8 max-w-xs">Peintre Nice : Excellence, artisanat local et finitions d'exception en Côte d'Azur depuis 2014.</p>
+    </div>
+    <nav class="flex flex-col gap-4" aria-label="Liens rapides">
+      <p class="text-xs font-bold uppercase tracking-widest text-secondary mb-2">Navigation</p>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#">Accueil</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#services">Services</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#projets">Réalisations</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#apropos">À propos</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#contact">Devis Gratuit</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <p class="text-xs font-bold uppercase tracking-widest text-secondary mb-2">Informations Légales</p>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#">Mentions Légales</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#">Politique de Confidentialité</a>
+      <div class="mt-4 p-4 bg-white/5 rounded border border-white/10">
+        <p class="text-[10px] opacity-40 uppercase tracking-widest mb-1">Société</p>
+        <p class="text-xs text-surface/80">Renov'home — Alain Ghedir<br/>SIREN 801 083 601 — Nice</p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-surface/40 text-xs">
+    © Renov'home — SIREN 801 083 601 — 57 Chemin Gino Niccolai, 06000 Nice — Tous droits réservés
+  </div>
+</footer>
+
+<script>
+/* Navbar scroll effect */
+const navbar = document.querySelector('nav.fixed');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('shadow-md', window.scrollY > 60);
+}, { passive: true });
+
+/* Mobile menu */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const overlay = document.querySelector('.mobile-overlay');
+
+function toggleMenu() {
+  const isOpen = mobileMenu.classList.toggle('open');
+  overlay.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  mobileMenu.setAttribute('aria-hidden', !isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+hamburger.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', toggleMenu);
+});
+
+/* Reveal on scroll */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
