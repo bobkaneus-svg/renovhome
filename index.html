@@ -176,6 +176,27 @@ html { scroll-behavior: smooth; }
   pointer-events: all;
 }
 
+/* Project card filter animation */
+.project-card { transition: opacity 0.4s ease, transform 0.4s ease; display: block; }
+.project-card.hidden-card { opacity: 0; transform: scale(0.95); position: absolute; pointer-events: none; }
+
+/* Form success */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  gap: 1rem;
+}
+.form-success .material-symbols-outlined { font-size: 4rem; color: #22c55e; }
+
+/* Mentions modal */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.modal-backdrop.open { opacity: 1; pointer-events: all; }
+.modal-content { background: #fff; max-width: 640px; width: 90%; max-height: 80vh; overflow-y: auto; border-radius: 1rem; padding: 2.5rem; position: relative; }
+
 /* Testimonials scroll-snap on mobile */
 @media (max-width: 768px) {
   .testimonials-scroll {
@@ -350,7 +371,10 @@ html { scroll-behavior: smooth; }
         <span class="material-symbols-outlined text-secondary text-5xl mb-6">layers</span>
         <div>
           <h3 class="text-2xl font-headline font-extrabold text-primary mb-4">Revêtements de Sol</h3>
-          <p class="text-on-surface-variant mb-6">Parquet, carrelage, vinyle, résine. Pose experte adaptée à chaque pièce et chaque usage.</p>
+          <p class="text-on-surface-variant mb-4">Parquet, carrelage, vinyle, résine. Pose experte adaptée à chaque pièce et chaque usage.</p>
+          <a class="inline-flex items-center gap-2 font-bold text-secondary text-sm" href="#contact">
+            Demander un devis <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
       </article>
       <!-- Ravalement -->
@@ -358,14 +382,20 @@ html { scroll-behavior: smooth; }
         <span class="material-symbols-outlined text-secondary text-5xl mb-6">architecture</span>
         <div>
           <h3 class="text-2xl font-headline font-extrabold text-primary mb-4">Ravalement de Façade</h3>
-          <p class="text-on-surface-variant mb-6">Traitement des fissures, imperméabilisation. Protection et esthétique durables pour valoriser votre patrimoine.</p>
+          <p class="text-on-surface-variant mb-4">Traitement des fissures, imperméabilisation. Protection et esthétique durables pour valoriser votre patrimoine.</p>
+          <a class="inline-flex items-center gap-2 font-bold text-secondary text-sm" href="#contact">
+            Demander un devis <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
       </article>
       <!-- Décoration & Finitions -->
       <div class="md:col-span-2 bg-primary-container text-white p-10 rounded-xl flex flex-col md:flex-row gap-10 items-center reveal">
         <div class="md:w-1/2">
           <h3 class="text-2xl font-headline font-extrabold mb-4">Finitions &amp; Décoration</h3>
-          <p class="text-surface/70">Enduits décoratifs, papier peint, effets matière. Conseils personnalisés en colorimétrie. La touche finale qui fait la différence.</p>
+          <p class="text-surface/70 mb-4">Enduits décoratifs, papier peint, effets matière. Conseils personnalisés en colorimétrie. La touche finale qui fait la différence.</p>
+          <a class="inline-flex items-center gap-2 font-bold text-secondary text-sm" href="#contact">
+            Demander un devis <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
         <div class="md:w-1/2 grid grid-cols-2 gap-4">
           <div class="aspect-square bg-white/10 rounded-lg flex items-center justify-center">
@@ -388,69 +418,69 @@ html { scroll-behavior: smooth; }
         <span class="inline-block uppercase font-bold tracking-[0.2em] text-secondary text-sm">Portfolio</span>
         <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary mt-2">Nos réalisations</h2>
       </div>
-      <div class="flex gap-4">
-        <button class="px-6 py-2 bg-primary text-on-primary rounded-full text-sm font-bold uppercase tracking-tighter">Tout</button>
-        <button class="px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all">Peinture</button>
-        <button class="px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all">Sols</button>
+      <div class="flex gap-4" id="gallery-filters">
+        <button class="filter-btn px-6 py-2 bg-primary text-on-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all" data-filter="all">Tout</button>
+        <button class="filter-btn px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all" data-filter="peinture">Peinture</button>
+        <button class="filter-btn px-6 py-2 hover:bg-surface-container text-primary rounded-full text-sm font-bold uppercase tracking-tighter transition-all" data-filter="sols">Sols</button>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Project 1 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="peinture sols">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-primary to-[#2a6b8a] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Rénovation appartement Nice Centre"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Appartement Nice Centre</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Rénovation Complète Parquet &amp; Murs</h3>
         <p class="text-sm text-on-surface-variant">Finition Satinée — 120m²</p>
-      </div>
+      </a>
       <!-- Project 2 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="peinture">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-[#9c4400] to-[#e0a98a] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Villa Villefranche"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Villa Villefranche</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Peinture Décorative</h3>
         <p class="text-sm text-on-surface-variant">Effet minéral &amp; Chaux</p>
-      </div>
+      </a>
       <!-- Project 3 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="peinture">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-[#44474c] to-[#818d9f] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Ravalement Cagnes-sur-Mer"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Cagnes-sur-Mer</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Ravalement de Façade</h3>
         <p class="text-sm text-on-surface-variant">Protection anti-humidité</p>
-      </div>
+      </a>
       <!-- Project 4 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="peinture">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-primary-container to-[#3c4857] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Enduit décoratif"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Nice Ouest</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Enduit Décoratif Salon</h3>
         <p class="text-sm text-on-surface-variant">Effet béton ciré</p>
-      </div>
+      </a>
       <!-- Project 5 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="sols">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-[#082935] to-[#1B4965] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Pose parquet Antibes"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Antibes</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Pose Parquet Massif</h3>
         <p class="text-sm text-on-surface-variant">Chêne huilé — 85m²</p>
-      </div>
+      </a>
       <!-- Project 6 -->
-      <div class="group cursor-pointer reveal">
+      <a href="#contact" class="group cursor-pointer reveal project-card" data-category="sols">
         <div class="relative overflow-hidden rounded-xl aspect-square mb-6">
           <div class="w-full h-full bg-gradient-to-br from-[#a08060] to-[#E8DED1] group-hover:scale-110 transition-transform duration-500" role="img" aria-label="Sol vinyle Saint-Laurent-du-Var"></div>
           <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] px-3 py-1 font-bold uppercase tracking-widest">Saint-Laurent-du-Var</div>
         </div>
         <h3 class="font-headline font-bold text-xl text-primary">Sol Vinyle Design</h3>
         <p class="text-sm text-on-surface-variant">Imitation bois naturel</p>
-      </div>
+      </a>
     </div>
-    <p class="text-center mt-12 text-lg text-on-surface-variant font-light reveal">Chaque projet est unique. Contactez-nous pour discuter du vôtre.</p>
+    <p class="text-center mt-12 text-lg text-on-surface-variant font-light reveal">Chaque projet est unique. <a href="#contact" class="text-secondary font-medium underline underline-offset-4 hover:text-on-secondary-container transition-colors">Contactez-nous pour discuter du vôtre.</a></p>
   </div>
 </section>
 
@@ -634,6 +664,24 @@ html { scroll-behavior: smooth; }
 
 </main>
 
+<!-- MENTIONS LEGALES MODAL -->
+<div class="modal-backdrop" id="mentions-modal">
+  <div class="modal-content">
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary" id="close-modal" aria-label="Fermer">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h2 class="font-headline text-2xl font-extrabold text-primary mb-6" id="modal-title">Mentions Légales</h2>
+    <div class="text-sm text-on-surface-variant leading-relaxed space-y-4" id="modal-body">
+      <p><strong class="text-primary">Éditeur du site :</strong><br/>Renov'home — Alain Ghedir<br/>57 Chemin Gino Niccolai, 06000 Nice<br/>SIREN : 801 083 601</p>
+      <p><strong class="text-primary">Activité :</strong><br/>Artisan peintre en bâtiment et poseur de revêtements de sol.</p>
+      <p><strong class="text-primary">Contact :</strong><br/>Téléphone : 06 00 00 00 00<br/>Email : contact@renovhome.fr</p>
+      <p><strong class="text-primary">Hébergement :</strong><br/>GitHub Pages — GitHub, Inc. — 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</p>
+      <p><strong class="text-primary">Propriété intellectuelle :</strong><br/>L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive de Renov'home. Toute reproduction est interdite sans autorisation préalable.</p>
+      <p><strong class="text-primary">Données personnelles :</strong><br/>Les informations recueillies via le formulaire de contact sont destinées exclusivement à Renov'home pour le traitement de votre demande. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à contact@renovhome.fr.</p>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-primary text-on-primary py-16 px-8 border-t border-white/5">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-sm leading-relaxed">
@@ -651,8 +699,8 @@ html { scroll-behavior: smooth; }
     </nav>
     <div class="flex flex-col gap-4">
       <p class="text-xs font-bold uppercase tracking-widest text-secondary mb-2">Informations Légales</p>
-      <a class="text-surface/60 hover:text-secondary transition-colors" href="#">Mentions Légales</a>
-      <a class="text-surface/60 hover:text-secondary transition-colors" href="#">Politique de Confidentialité</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#mentions" id="mentions-link">Mentions Légales</a>
+      <a class="text-surface/60 hover:text-secondary transition-colors" href="#mentions" id="confidentialite-link">Politique de Confidentialité</a>
       <div class="mt-4 p-4 bg-white/5 rounded border border-white/10">
         <p class="text-[10px] opacity-40 uppercase tracking-widest mb-1">Société</p>
         <p class="text-xs text-surface/80">Renov'home — Alain Ghedir<br/>SIREN 801 083 601 — Nice</p>
@@ -700,8 +748,104 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
 reveals.forEach(el => observer.observe(el));
+
+/* Gallery filter */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+const projectGrid = projectCards[0]?.parentElement;
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+    filterBtns.forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary');
+      b.classList.add('text-primary');
+    });
+    btn.classList.add('bg-primary', 'text-on-primary');
+    btn.classList.remove('text-primary');
+
+    projectCards.forEach(card => {
+      const cats = card.dataset.category;
+      if (filter === 'all' || cats.includes(filter)) {
+        card.classList.remove('hidden-card');
+        card.style.position = '';
+      } else {
+        card.classList.add('hidden-card');
+        setTimeout(() => { card.style.position = 'absolute'; }, 400);
+      }
+    });
+  });
+});
+
+/* Form submission with success feedback */
+const form = document.querySelector('form[aria-label="Formulaire de contact"]');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formParent = form.parentElement;
+    form.style.opacity = '0';
+    form.style.transform = 'translateY(-10px)';
+    form.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+      formParent.innerHTML = `
+        <div class="form-success">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          <h3 class="font-headline text-2xl font-extrabold text-primary">Demande envoyée !</h3>
+          <p class="text-on-surface-variant max-w-sm">Merci pour votre confiance. Alain Ghedir vous recontactera sous 24h pour discuter de votre projet.</p>
+          <a href="tel:+33600000000" class="mt-4 inline-flex items-center gap-2 px-6 py-3 bg-secondary text-on-secondary rounded font-headline font-bold uppercase tracking-tighter text-sm">
+            <span class="material-symbols-outlined text-base">call</span> Appeler directement
+          </a>
+        </div>
+      `;
+    }, 300);
+  });
+}
+
+/* Mentions légales modal */
+const modal = document.getElementById('mentions-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const closeModal = document.getElementById('close-modal');
+
+const mentionsContent = modalBody.innerHTML;
+const confidentialiteContent = `
+  <p><strong class="text-primary">Responsable du traitement :</strong><br/>Renov'home — Alain Ghedir<br/>57 Chemin Gino Niccolai, 06000 Nice<br/>Email : contact@renovhome.fr</p>
+  <p><strong class="text-primary">Données collectées :</strong><br/>Via le formulaire de contact : nom, email, téléphone, description du projet. Ces données sont collectées uniquement pour répondre à votre demande de devis.</p>
+  <p><strong class="text-primary">Durée de conservation :</strong><br/>Vos données sont conservées pendant 3 ans à compter de votre dernière interaction avec Renov'home.</p>
+  <p><strong class="text-primary">Vos droits (RGPD) :</strong><br/>Vous disposez d'un droit d'accès, de rectification, de suppression, de limitation et de portabilité de vos données. Pour exercer ces droits, contactez-nous à contact@renovhome.fr.</p>
+  <p><strong class="text-primary">Cookies :</strong><br/>Ce site n'utilise aucun cookie de tracking ni outil d'analyse tiers.</p>
+`;
+
+function openModal(title, content) {
+  modalTitle.textContent = title;
+  modalBody.innerHTML = content;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModalFn() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('mentions-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  openModal('Mentions Légales', mentionsContent);
+});
+
+document.getElementById('confidentialite-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  openModal('Politique de Confidentialité', confidentialiteContent);
+});
+
+closeModal.addEventListener('click', closeModalFn);
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModalFn();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModalFn();
+});
 </script>
 
 </body>
